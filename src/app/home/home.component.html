@@ -1,0 +1,41 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-lg-12">
+      <h5 class="mb-3"><b>Request List</b></h5>
+      <div class="mt-3">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Source System</th>
+                <th scope="col">Source Database</th>
+                <th scope="col">Target System</th>
+                <th scope="col">Target Database</th>
+                <th scope="col">Type</th>
+                <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr *ngIf="requestList.length == 0">
+                <td colspan="7" style="text-align: center"><h3>There are no requests yet</h3></td>
+            </tr>
+            <tr *ngFor="let request of requestList">
+                <td>{{request.requestId}}</td>
+                <td>{{request.sourceSystem}}</td>
+                <td>{{request.sourceDatabase}}</td>
+                <td>{{request.targetSystem}}</td>
+                <td>{{request.targetDatabase}}</td>
+                <td>{{request.type}}</td>
+                <td>
+                    <input type="button" data-sid="" class="btn btn-warning btn-sm" value="Edit"/>&nbsp;
+                    <input type="button" data-sid="" class="btn btn-info btn-sm" value="View"/>&nbsp;
+                    <input type="button" data-sid="" class="btn btn-danger btn-sm" value="Delete"/>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-outline-success mt-3" type="submit">Add Request</button>
+    </div>
+  </div>
+</div>
